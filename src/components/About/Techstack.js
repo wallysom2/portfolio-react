@@ -7,6 +7,7 @@ import {
   DiNodejs,
   DiMongodb,
   DiPostgresql,
+  Divue,
   DiGit,
 } from "react-icons/di";
 import {
@@ -18,9 +19,6 @@ import {
 function Techstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      <Col xs={4} md={2} className="tech-icons">
-        <CgCPlusPlus />
-      </Col>
       <Col xs={4} md={2} className="tech-icons">
         <DiJavascript1 />
       </Col>
@@ -40,7 +38,7 @@ function Techstack() {
         <DiGit />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiFirebase />
+        <Divue />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <DiPostgresql />

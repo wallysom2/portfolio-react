@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 import fashion from "../../Assets/Projects/fashion.png";
+import calculator from "../../Assets/Projects/calculator.png";
 
 
 function Projects() {
@@ -25,6 +26,16 @@ function Projects() {
               description="Online marketplace store build with javascript, css and html. Have features which allows user to chooce clothes options images and make new orders."
               ghLink="https://github.com/wallysom2/fashion-site"
               demoLink="https://scintillating-unicorn-0565df.netlify.app/"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={calculator}
+              isBlog={false}
+              title="Calculator Vue"
+              description="A simple and user-friendly calculator built with Vue."
+              ghLink="https://github.com/wallysom2/vue-calculator"
+              demoLink="https://main--sparkling-macaron-8c15f3.netlify.app/"
             />
           </Col>
 

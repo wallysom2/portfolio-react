@@ -1,48 +1,38 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import ProjectCard from "./ProjectCards";
-import Particle from "../Particle";
-import fashion from "../../Assets/Projects/fashion.png";
-import calculator from "../../Assets/Projects/calculator.png";
-
+import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
+import projects from '../../Assets/data';
+import Particle from '../Particle';
+import ProjectCard from './ProjectCards';
 
 function Projects() {
-  return (
-    <Container fluid className="project-section">
-      <Particle />
-      <Container>
-        <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
-        </h1>
-        <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
-        </p>
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={fashion}
-              isBlog={false}
-              title="fashion"
-              description="Online marketplace store build with javascript, css and html. Have features which allows user to chooce clothes options images and make new orders."
-              ghLink="https://github.com/wallysom2/fashion-site"
-              demoLink="https://scintillating-unicorn-0565df.netlify.app/"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={calculator}
-              isBlog={false}
-              title="Calculator Vue"
-              description="A simple and user-friendly calculator built with Vue."
-              ghLink="https://github.com/wallysom2/vue-calculator"
-              demoLink="https://main--sparkling-macaron-8c15f3.netlify.app/"
-            />
-          </Col>
-
-        </Row>
-      </Container>
-    </Container>
-  );
+	return (
+		<Container fluid className="project-section">
+			<Particle />
+			<Container>
+				<h1 className="project-heading">
+					My Recent <strong className="purple">Works </strong>
+				</h1>
+				<p style={{ color: 'white' }}>
+					Here are a few projects I've worked on recently.
+				</p>
+				<Row
+					style={{ justifyContent: 'center', paddingBottom: '10px' }}>
+					{projects.map((project, index) => (
+						<Col md={4} className="project-card">
+							<ProjectCard
+								key={index}
+								imgPath={project.imgPath}
+								title={project.title}
+								description={project.description}
+								ghLink={project.ghLink}
+								demoLink={project.demoLink}
+							/>
+						</Col>
+					))}
+				</Row>
+			</Container>
+		</Container>
+	);
 }
 
 export default Projects;
